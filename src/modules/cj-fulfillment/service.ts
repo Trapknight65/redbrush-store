@@ -1,4 +1,4 @@
-import { AbstractFulfillmentProviderService } from "@medusajs/framework/utils"
+import { AbstractFulfillmentProviderService } from "@medusajs/utils"
 import { FulfillmentOption } from "@medusajs/framework/types"
 
 class CjFulfillmentService extends AbstractFulfillmentProviderService {
