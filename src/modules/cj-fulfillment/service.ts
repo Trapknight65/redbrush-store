@@ -1,4 +1,9 @@
-import { AbstractFulfillmentProviderService } from "@medusajs/utils"
+// import { AbstractFulfillmentProviderService } from "@medusajs/utils"
+// Inlined to avoid "undefined prototype" error on Render
+class AbstractFulfillmentProviderService {
+    static _isFulfillmentService = true
+}
+
 import { FulfillmentOption } from "@medusajs/framework/types"
 
 class CjFulfillmentService extends AbstractFulfillmentProviderService {
