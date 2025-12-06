@@ -5,7 +5,7 @@ class CjFulfillmentService extends AbstractFulfillmentProviderService {
     static identifier = "cj-fulfillment"
 
     constructor(container) {
-        super(container)
+        super()
     }
 
     async getFulfillmentOptions(): Promise<FulfillmentOption[]> {
@@ -17,27 +17,31 @@ class CjFulfillmentService extends AbstractFulfillmentProviderService {
     }
 
     async validateFulfillmentData(
-        optionData: Record<string, unknown>,
-        data: Record<string, unknown>,
-        context: Record<string, unknown>
+        optionData: any,
+        data: any,
+        context: any
     ): Promise<any> {
         return data
     }
 
-    async validateOption(data: Record<string, unknown>): Promise<boolean> {
+    async validateOption(data: any): Promise<boolean> {
         return true
     }
 
-    async canCalculate(data: Record<string, unknown>): Promise<boolean> {
+    async canCalculate(data: any): Promise<boolean> {
         return false
     }
 
     async calculatePrice(
-        optionData: Record<string, unknown>,
-        data: Record<string, unknown>,
-        context: Record<string, unknown>
-    ): Promise<number> {
-        throw new Error("Method not implemented.")
+        optionData: any,
+        data: any,
+        context: any
+    ): Promise<any> {
+        // TODO: Implement actual price calculation with CJ API
+        return {
+            calculated_amount: 0,
+            is_calculated_price_tax_inclusive: false
+        }
     }
 
     async createFulfillment(
@@ -52,7 +56,8 @@ class CjFulfillmentService extends AbstractFulfillmentProviderService {
     }
 
     async cancelFulfillment(fulfillment: Record<string, unknown>): Promise<any> {
-        throw new Error("Method not implemented.")
+        // TODO: Implement actual cancellation with CJ API
+        return {}
     }
 }
 
